@@ -16,6 +16,8 @@ import{ AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PasswordComponent } from './components/password/password.component';
+import { BreakfastComponent } from './components/breakfast/breakfast.component';
+import { LunchComponent } from './components/lunch/lunch.component';
 
 
 
@@ -26,7 +28,9 @@ import { PasswordComponent } from './components/password/password.component';
     LoginComponent,
     MenuComponent,
     OrdersComponent,
-    PasswordComponent
+    PasswordComponent,
+    BreakfastComponent,
+    LunchComponent
   ],
   imports: [
     BrowserModule,
