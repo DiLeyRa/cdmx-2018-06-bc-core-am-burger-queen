@@ -24,4 +24,12 @@ export class AuthService {
   logOut(){
     return this.afAuth.auth.signOut();
   }
+  password(email:string){
+    return this.afAuth.auth.sendPasswordResetEmail(email)
+    .then(()=>{
+      alert('Revisa tú correo');
+    })
+    .catch(err => console.log(err));
+  }
+
 }

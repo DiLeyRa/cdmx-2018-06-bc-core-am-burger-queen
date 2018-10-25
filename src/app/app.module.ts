@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 import { AuthService } from './services/auth.service';
 
 import { AngularFireModule } from '@angular/fire';
 import{ AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { PasswordComponent } from './components/password/password.component';
+
 
 
 @NgModule({
@@ -20,14 +24,17 @@ import { environment } from '../environments/environment';
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    OrdersComponent,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
