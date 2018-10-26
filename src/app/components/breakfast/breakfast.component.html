@@ -4,12 +4,38 @@
         <div class="card-body">
             <h1 class="text-center">Desayuno</h1>
           <form>
-            <input type="submit" value="Café americano          $5.00" class="enviar btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Café con leche          $7.00" class="enviar btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Sandwich jamón/queso    $10.00" class="enviar btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Jugo natural            $7.00" class="enviar btn btn btn-warning btn-block btn-lg">
+              <div class="container">
+                  <form (ngSubmit)="agregar()" class="input-group mb-3">
+                    <input type="submit" value="Café americano          $5.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                    <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                  </form>
+                  <form (ngSubmit)="agregar()" class="input-group mb-3">
+                      <input type="submit" value="Café con leche          $7.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                      <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                    </form>
+                    <form (ngSubmit)="agregar()" class="input-group mb-3">
+                        <input type="submit" value="Sandwich jamón/queso    $10.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                        <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                      </form>
+                      <form (ngSubmit)="agregar()" class="input-group mb-3">
+                          <input type="submit" value="Jugo natural    $7.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                          <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                        </form>
+                </div>
+                <div class="container">
+                    <div class="card border-info mb-3" *ngFor="let item of items">
+                      <div class="card-body text-info">
+                        <h5 class="card-title">{{item.id}}</h5>
+                        <div class="float-right" (click)="eliminar(item)">
+                          <i class="fa fa-trash"></i>
+                        </div>
+                      </div>
+                    </div>
+                </div>
           </form>
         </div>
       </div>
-    </div>
+      
   </div>
+
+

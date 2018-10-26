@@ -1,19 +1,55 @@
-<div class="row">
-    <div class="col-md-6 mt-5">
-      <div class="card">
-        <div class="card-body">
-            <h1 class="text-center">Almuerzo y Cena</h1>
-          <form>
-            <input type="submit" value="Hamburguesa Simple          $5.00" class="enviar btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Hamburguesa Doble           $7.00" class="enviar btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Papas fritas                $5.00" class="enviar btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Onion Rings                 $5.00" class="enviar btn btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Agua 500ml                  $5.00" class="enviar btn btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Agua 750ml                  $7.00" class="enviar btn btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Gaseosa 500ml               $7.00" class="enviar btn btn btn-warning btn-block btn-lg">
-            <input type="submit" value="Gaseosa 750ml               $10.00" class="enviar btn btn btn-warning btn-block btn-lg">
-          </form>
+  <div class="row">
+      <div class="col-md-6 mt-5">
+        <div class="card">
+          <div class="card-body">
+              <h1 class="text-center">Desayuno</h1>
+            <form>
+                <div class="container">
+                    <form (ngSubmit)="agregar()" class="input-group mb-3">
+                      <input type="submit" value="Hamburguesa Simple          $5.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                      <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                    </form>
+                    <form (ngSubmit)="agregar()" class="input-group mb-3">
+                        <input type="submit" value="Hamburguesa Doble           $7.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                        <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                      </form>
+                      <form (ngSubmit)="agregar()" class="input-group mb-3">
+                          <input type="submit" value="Papas fritas                $5.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                          <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                        </form>
+                        <form (ngSubmit)="agregar()" class="input-group mb-3">
+                            <input type="submit" value="Onion Rings                 $5.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                            <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                          </form>
+                          <form (ngSubmit)="agregar()" class="input-group mb-3">
+                              <input type="submit" value="Agua 500ml                  $5.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                              <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                            </form>
+                            <form (ngSubmit)="agregar()" class="input-group mb-3">
+                                <input type="submit" value="Agua 750ml                  $7.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                                <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                              </form>
+                              <form (ngSubmit)="agregar()" class="input-group mb-3">
+                                  <input type="submit" value="Gaseosa 500ml               $7.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                                  <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                                </form>
+                                <form (ngSubmit)="agregar()" class="input-group mb-3">
+                                    <input type="submit" value="Gaseosa 750ml               $10.00" name="cafe" class="enviar btn btn-warning btn-block btn-lg">
+                                    <!-- <button class="btn btn-outline" type="submit">Cafe americano</button> -->
+                                  </form>
+                  </div>
+                  <div class="container">
+                      <div class="card border-info mb-3" *ngFor="let item of items">
+                        <div class="card-body text-info">
+                          <h5 class="card-title">{{item.id}}</h5>
+                          <div class="float-right" (click)="eliminar(item)">
+                            <i class="fa fa-trash"></i>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </form>
+          </div>
         </div>
-      </div>
+        
     </div>
-  </div>

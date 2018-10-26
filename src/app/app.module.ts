@@ -11,13 +11,18 @@ import { OrdersComponent } from './components/orders/orders.component';
 
 import { AuthService } from './services/auth.service';
 
-import { AngularFireModule } from '@angular/fire';
-import{ AngularFireAuthModule } from '@angular/fire/auth';
+
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PasswordComponent } from './components/password/password.component';
 import { BreakfastComponent } from './components/breakfast/breakfast.component';
 import { LunchComponent } from './components/lunch/lunch.component';
+import{AngularFireModule} from 'angularfire2';
+import{AngularFirestoreModule} from 'angularfire2/firestore';
+import{AngularFireStorageModule} from 'angularfire2/storage';
+import{AngularFireAuthModule} from 'angularfire2/auth';
+import { ConexionService } from './services/conexion.service';
+
 
 
 
@@ -38,9 +43,10 @@ import { LunchComponent } from './components/lunch/lunch.component';
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ConexionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

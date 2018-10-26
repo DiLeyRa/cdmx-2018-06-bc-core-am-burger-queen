@@ -7,7 +7,10 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(
+    public afAuth: AngularFireAuth
+  ) { 
+  }
 
   loginEmail(email:string, password:string){
     return new Promise((resolve, reject) => {
